@@ -35,6 +35,8 @@ export default function HomeScreen() {
           </View>
           <View style={styles.row}>
             <Text style={styles.bpmText}>❤️ 67 <Text style={styles.bpmSub}>BPM</Text></Text>
+            <Text style={styles.lastSyncedText}>Last synced: 2 mins ago</Text>
+
             <Ionicons name="chevron-forward" size={24} color="#ccc" />
           </View>
         </TouchableOpacity>
@@ -108,4 +110,11 @@ const styles = StyleSheet.create({
   safetyTitle: { color: '#ff4444', fontFamily: 'Nunito-Bold', fontSize: 18 },
   safetySub: { color: '#666', fontFamily: 'Nunito-Regular' },
   row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  lastSyncedText: {
+  fontFamily: 'Nunito-Regular',
+  fontSize: 12,
+  color: '#888',
+  marginTop: 4,
+  marginLeft: 10,
+},
 });
