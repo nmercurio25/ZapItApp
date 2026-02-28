@@ -44,7 +44,7 @@ export default function HealthModal() {
             <View style={styles.bpmCard}>
                 <Text style={styles.bpmLarge}>67 <Text style={styles.bpmUnit}>BPM</Text></Text>
                 <View style={styles.linePlaceholder} />
-                <Text style={styles.graphLabel}>Real-time vitals synced with Zap It watch</Text>
+                <Text style={styles.graphLabel}>Last synced: 2 mins ago</Text>
             </View>
 
             <View style={styles.graphCard}>
