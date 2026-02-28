@@ -10,16 +10,17 @@ export default function HomeScreen() {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.header}>
-                <Text style={[styles.cardTitle, GlobalText.bold]}>Heart Rate</Text>
-                <Text style={[styles.tagline, GlobalText.regular]}>Precision in every pulse</Text>
+                <Text style={styles.brandTitle}>ZAP IT.</Text>
+                <Text style={styles.tagline}>Precision in every pulse</Text>
             </View>
 
             <View style={styles.card}>
                 <View style={styles.cardHeader}>
+                    {/* Using Nunito-Bold directly */}
                     <Text style={styles.cardTitle}>Heart Rate</Text>
-                    <Text style={{ color: '#4CAF50', fontWeight: 'bold' }}>🔋 100%</Text>
+                    <Text style={{ color: '#4CAF50', fontFamily: 'Nunito-Bold' }}>🔋 100%</Text>
                 </View>
-                <Text style={styles.bpmText}>❤️ 67 <Text style={{ fontSize: 18, color: '#666' }}>BPM</Text></Text>
+                <Text style={styles.bpmText}>❤️ 67 <Text style={styles.bpmSub}>BPM</Text></Text>
             </View>
 
             <View style={styles.card}>
