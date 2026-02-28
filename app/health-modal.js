@@ -1,19 +1,52 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
 
 export default function HeartModal() {
   const router = useRouter();
+  
+  // 1. Setup the Animation Value
+  const pulseAnim = useRef(new Animated.Value(1)).current;
+
+  // 2. Define the Heartbeat Sequence
+  useEffect(() => {
+    const heartbeat = Animated.loop(
+      Animated.sequence([
+        // Scale up slightly (the "thump")
+        Animated.timing(pulseAnim, {
+          toValue: 1.2,
+          duration: 400,
+          useNativeDriver: true,
+        }),
+        // Scale back to normal
+        Animated.timing(pulseAnim, {
+          toValue: 1,
+          duration: 600,
+          useNativeDriver: true,
+        }),
+      ])
+    );
+
+    heartbeat.start();
+
+    // Clean up animation on unmount
+    return () => heartbeat.stop();
+  }, [pulseAnim]);
 
   return (
     <View style={styles.container}>
-      <View style={styles.iconContainer}>
+      {/* 3. Wrap the icon in an Animated.View */}
+      <Animated.View 
+        style={[
+          styles.iconContainer, 
+          { transform: [{ scale: pulseAnim }] } // Apply the pulse
+        ]}
+      >
         <Text style={styles.icon}>❤️</Text>
-      </View>
+      </Animated.View>
       
       <Text style={styles.title}>Heart Rate Monitor</Text>
       
-      {/* Mock Graph Area */}
       <View style={styles.graphCard}>
         <Text style={styles.bpmLarge}>67 <Text style={styles.bpmUnit}>BPM</Text></Text>
         <View style={styles.linePlaceholder} />
@@ -40,7 +73,14 @@ export default function HeartModal() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff', padding: 30 },
-  iconContainer: { backgroundColor: '#FFF0F0', padding: 25, borderRadius: 100, marginBottom: 15 },
+  iconContainer: { 
+    backgroundColor: '#FFF0F0', 
+    padding: 25, 
+    borderRadius: 100, 
+    marginBottom: 15,
+    // Ensure shadow/elevation stays consistent during animation
+    elevation: 2 
+  },
   icon: { fontSize: 60 },
   title: { fontSize: 26, fontFamily: 'Nunito-Black', color: '#00ADEF', marginBottom: 20 },
   graphCard: { width: '100%', backgroundColor: '#F5F9FF', borderRadius: 20, padding: 20, alignItems: 'center' },

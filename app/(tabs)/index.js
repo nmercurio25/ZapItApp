@@ -27,13 +27,18 @@ export default function HomeScreen() {
       </View>
 
       {/* Heart Rate Card */}
-      <View style={styles.card}>
-        <View style={styles.cardHeader}>
-          <Text style={styles.cardTitle}>Heart Rate</Text>
-          <Text style={styles.batteryText}>🔋 100%</Text>
-        </View>
-        <Text style={styles.bpmText}>❤️ 67 <Text style={styles.bpmSub}>BPM</Text></Text>
-      </View>
+      <Link href="/health-modal" asChild>
+        <TouchableOpacity style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Text style={styles.cardTitle}>Heart Rate</Text>
+            <Text style={styles.batteryText}>🔋 100%</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.bpmText}>❤️ 67 <Text style={styles.bpmSub}>BPM</Text></Text>
+            <Ionicons name="chevron-forward" size={24} color="#ccc" />
+          </View>
+        </TouchableOpacity>
+      </Link>
 
       {/* Haptics Intensity Slider */}
       <View style={styles.card}>
