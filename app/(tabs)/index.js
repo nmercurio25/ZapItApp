@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button } from 'react-native';
 import { Link } from 'expo-router';
 import Slider from '@react-native-community/slider';
+import { GlobalText } from '../../styles/global';
 
 export default function HomeScreen() {
     const [intensity, setIntensity] = useState(50);
@@ -10,8 +11,8 @@ export default function HomeScreen() {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.brandTitle}>ZAP IT.</Text>
-                <Text style={styles.tagline}>Precision in every pulse</Text>
+                <Text style={[styles.cardTitle, GlobalText.bold]}>Heart Rate</Text>
+                <Text style={[styles.tagline, GlobalText.regular]}>Precision in every pulse</Text>
             </View>
 
             <View style={styles.card}>
