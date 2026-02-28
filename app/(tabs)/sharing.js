@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import * as Haptics from 'expo-haptics'; // Import Haptics
+import * as Haptics from 'expo-haptics';
 
 export default function SharingScreen() {
   const router = useRouter();
@@ -17,15 +17,14 @@ export default function SharingScreen() {
     { username: '@TINE_M', status: 'STUDY MODE' },
   ];
 
-  // The Poke Logic: Triggers vibration and an alert
   const onPoke = (name) => {
-    // Requirement: Third-party interaction
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     Alert.alert("Poke Sent!", `You sent a focus vibration to ${name}.`);
   };
 
   return (
     <ScrollView style={styles.container}>
+      {/* SECTION 1: ZAP COMMUNITY */}
       <Text style={styles.header}>Zap Community</Text>
       {community.map((member) => (
         <TouchableOpacity 
@@ -41,6 +40,7 @@ export default function SharingScreen() {
         </TouchableOpacity>
       ))}
 
+      {/* SECTION 2: FRIENDS */}
       <Text style={styles.subHeader}>Friends</Text>
       {friends.map((friend) => (
         <View key={friend.username} style={styles.friendRow}>
@@ -52,7 +52,6 @@ export default function SharingScreen() {
             <Text style={styles.friendStatus}>{friend.status}</Text>
           </TouchableOpacity>
 
-          {/* Poke Button - Triggers the vibration logic */}
           <TouchableOpacity 
             style={styles.pokeButton}
             onPress={() => onPoke(friend.username)}
@@ -68,8 +67,19 @@ export default function SharingScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F5F9FF', padding: 20 },
-  header: { fontSize: 24, fontWeight: 'bold', marginBottom: 15, color: '#00ADEF' },
-  subHeader: { fontSize: 24, fontWeight: 'bold', marginTop: 30, marginBottom: 15, color: '#333' },
+  header: { 
+    fontSize: 24, 
+    fontFamily: 'Nunito-Black', // branding weight
+    marginBottom: 15, 
+    color: '#00ADEF' 
+  },
+  subHeader: { 
+    fontSize: 24, 
+    fontFamily: 'Nunito-Black', 
+    marginTop: 30, 
+    marginBottom: 15, 
+    color: '#333' 
+  },
   card: { 
     backgroundColor: '#fff', 
     flexDirection: 'row', 
@@ -80,8 +90,15 @@ const styles = StyleSheet.create({
     marginBottom: 12, 
     elevation: 3 
   },
-  mainName: { fontSize: 18, fontWeight: 'bold' },
-  statusText: { color: '#666', marginTop: 4 },
+  mainName: { 
+    fontSize: 18, 
+    fontFamily: 'Nunito-Bold' 
+  },
+  statusText: { 
+    fontFamily: 'Nunito-Regular', 
+    color: '#666', 
+    marginTop: 4 
+  },
   friendRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
   friendCard: {
     flex: 1,
@@ -91,8 +108,15 @@ const styles = StyleSheet.create({
     elevation: 2,
     marginRight: 10,
   },
-  friendName: { fontSize: 16, fontWeight: 'bold' },
-  friendStatus: { fontSize: 12, color: '#666' },
+  friendName: { 
+    fontSize: 16, 
+    fontFamily: 'Nunito-Bold' 
+  },
+  friendStatus: { 
+    fontSize: 12, 
+    fontFamily: 'Nunito-Regular', 
+    color: '#666' 
+  },
   pokeButton: {
     backgroundColor: '#fff',
     padding: 15,
