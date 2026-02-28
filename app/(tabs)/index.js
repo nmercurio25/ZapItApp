@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Button } from 'react-native';
 import { Link } from 'expo-router';
 import Slider from '@react-native-community/slider';
-import { GlobalText } from '../../styles/global';
 
 export default function HomeScreen() {
     const [intensity, setIntensity] = useState(50);
