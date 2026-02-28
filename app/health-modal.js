@@ -107,5 +107,6 @@ const styles = StyleSheet.create({
     statValue: { fontSize: 20, fontFamily: 'Nunito-Black', color: '#333' },
     statName: { fontSize: 12, fontFamily: 'Nunito-Regular', color: '#999' },
     closeButton: { backgroundColor: '#00ADEF', paddingVertical: 15, paddingHorizontal: 40, borderRadius: 30, width: '100%', alignItems: 'center' },
-    closeText: { color: '#fff', fontFamily: 'Nunito-Bold', fontSize: 16 }
+    closeText: { color: '#fff', fontFamily: 'Nunito-Bold', fontSize: 16 },
+    lastSyncedText: { fontFamily: 'Nunito-Regular',fontSize: 12, color: '#888', marginTop: 4},
 });
