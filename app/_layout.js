@@ -54,6 +54,14 @@ export default function RootLayout() {
                     name="(tabs)"
                     options={{ headerShown: false }}
                 />
+                
+                <Stack.Screen
+                    name="add-device"
+                    options={{
+                        title: 'Add Device', // This changes the header name
+                        presentation: 'modal' // Keeps it as a slide-up modal
+                    }}
+                />
 
                 <Stack.Screen
                     name="health-modal"
