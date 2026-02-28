@@ -7,7 +7,21 @@ export default function TabLayout() {
   return (
     <Tabs screenOptions={{ 
       tabBarActiveTintColor: ZAP_BLUE,
-      tabBarStyle: { height: 65, paddingBottom: 10 }
+      tabBarStyle: { height: 65, paddingBottom: 10 },
+      // APPLY NUNITO TO TAB LABELS
+      tabBarLabelStyle: {
+        fontFamily: 'Nunito-Bold', // Using the weight we loaded in root layout
+        fontSize: 12,
+      },
+      // APPLY NUNITO TO TOP HEADERS
+      headerTitleStyle: {
+        fontFamily: 'Nunito-Black', // Using the black weight for a bold header look
+        fontSize: 20,
+      },
+      headerStyle: {
+        backgroundColor: '#fff', // Or ZAP_BLUE if you prefer the colored header
+      },
+      headerTintColor: ZAP_BLUE, 
     }}>
       <Tabs.Screen name="index" options={{
         title: 'Home',
