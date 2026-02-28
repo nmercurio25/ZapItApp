@@ -2,6 +2,7 @@
   "expo": {
     "name": "ZapItApp",
     "slug": "ZapItApp",
+    "scheme": "zapitapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
