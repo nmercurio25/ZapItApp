@@ -7,9 +7,9 @@ export default function SharingScreen() {
   const router = useRouter();
 
   const community = [
-    { id: 'Alex_Zap', status: 'Deep Mode 🔥' },
-    { id: 'Jordan_Focus', status: 'Study Mode ⏳' },
-    { id: 'Sam_Bolt', status: 'Active ⚡' },
+    { id: 'Xyruz_Zap', status: 'Deep Mode 🔥' },
+    { id: 'Carl_Focus', status: 'Study Mode ⏳' },
+    { id: 'Nikol_Bolt', status: 'Active ⚡' },
   ];
 
   const friends = [
