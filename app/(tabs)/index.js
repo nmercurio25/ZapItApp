@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   brandTitle: { fontSize: 32, fontFamily: 'Nunito-Black', color: 'white' },
   tagline: { fontFamily: 'Nunito-Regular', color: 'white', opacity: 0.9, fontSize: 14 },
-  addIconButton: { padding: 5 },
+  addIconButton: { padding: 5},
   card: { backgroundColor: 'white', margin: 15, padding: 20, borderRadius: 20, elevation: 4 },
   cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   cardTitle: { fontSize: 18, fontFamily: 'Nunito-Bold', color: '#333' },
@@ -106,5 +106,6 @@ const styles = StyleSheet.create({
   modeLabel: { fontFamily: 'Nunito-Bold', marginTop: 5 },
   safetyCard: { borderLeftWidth: 8, borderLeftColor: '#ff4444' },
   safetyTitle: { color: '#ff4444', fontFamily: 'Nunito-Bold', fontSize: 18 },
-  safetySub: { color: '#666', fontFamily: 'Nunito-Regular' }
+  safetySub: { color: '#666', fontFamily: 'Nunito-Regular' },
+  row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
 });
