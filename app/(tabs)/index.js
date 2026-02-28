@@ -95,9 +95,11 @@ const styles = StyleSheet.create({
   },
   header: { 
     padding: 25, 
+    margin: 20,
     backgroundColor: '#00ADEF', 
     borderBottomLeftRadius: 30, 
-    borderBottomRightRadius: 30 
+    borderBottomRightRadius: 30,
+    borderRadius: 30
   },
   brandTitle: { 
     fontSize: 32, 
